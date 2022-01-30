@@ -3,10 +3,9 @@
 [How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 
 ## Purpose
-Deploy a Command Line Interface (CLI) application that runs with node and inquirer which will take user input and dynamically generate a README.md file with a corresponding HTML
+Deploy a Command Line Interface (CLI) application that runs with node and inquirer which will take user input and dynamically generate a README.md file.
 
 ## Built With
-*HTML
 *Javascript
 *Node
 *npm - Inquirer
