@@ -128,7 +128,7 @@ const questions =
 ]
 ;
 
-const readmeAnswers = [];
+var readmeAnswers = {};
 
 // TODO: Create a function to write README file
 const writeFile = () => {
@@ -152,9 +152,9 @@ function init() {
     return inquirer
     .prompt(questions)
     .then(readmeData => {
-        // console.log(readmeData)
-        readmeAnswers.push(readmeData);
-        // console.log(readmeAnswers);
+        console.log(readmeData)
+        readmeAnswers = readmeData;
+        console.log(readmeAnswers);
     })
 }
 
