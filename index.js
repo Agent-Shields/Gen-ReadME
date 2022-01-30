@@ -32,131 +32,135 @@ const questions =
             }
         }
 
-    },
-    {
-        type: 'input',
-        name: 'installation',
-        message: 'Describe the installation instructions for your project : ',
-        validate: (installInstructionInput) => {
-            if (installInstructionInput) {
-                return true;
-            } else {
-                console.log('Please list some installation instructions!');
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'input',
-        name: 'usage',
-        message: 'Enter the usage information for your project',
-        validate: (usageInfoInput) => {
-            if (usageInfoInput) {
-                return true;
-            } else {
-                console.log('Please list some usage information for your project!');
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'input',
-        name: 'contribution',
-        message: 'What are the contribution guidelines for your project?',
-        validate: (contributionInput) => {
-            if (contributionInput) {
-                return true;
-            } else {
-                console.log('Please list the contribution guidelines for your project!');
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'input',
-        name: 'tests',
-        message: 'Describe any test instructions for your project : ',
-        validate: (testsInput) => {
-            if (testsInput) {
-                return true;
-            } else {
-                console.log('Please list any test instructions for your project!');
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'checkbox',
-        name: 'license',
-        message: 'Choose the license for your project ',
-        choices: ['placeholders'],
-        validate: (licenseInput) => {
-            if (licenseInput) {
-                return true;
-            } else {
-                console.log('Please choose a license!');
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'input',
-        name: 'questionsGitUser',
-        message: 'What is your GitHub Username?',
-        validate: (gitUserInput) => {
-            if (gitUserInput) {
-                return true;
-            } else {
-                console.log('You must list your GitHub username!');
-                return false;
-            }
-        } 
-    },
-    {
-        type: 'input',
-        name: 'questionsEmail',
-        message: 'What is your email address?',
-        validate: (emailInput) => {
-            if (emailInput) {
-                return true;
-            } else {
-                console.log('You must list your email!');
-                return false;
-            }
-        } 
     }
+    // {
+    //     type: 'input',
+    //     name: 'installation',
+    //     message: 'Describe the installation instructions for your project : ',
+    //     validate: (installInstructionInput) => {
+    //         if (installInstructionInput) {
+    //             return true;
+    //         } else {
+    //             console.log('Please list some installation instructions!');
+    //             return false;
+    //         }
+    //     } 
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'usage',
+    //     message: 'Enter the usage information for your project',
+    //     validate: (usageInfoInput) => {
+    //         if (usageInfoInput) {
+    //             return true;
+    //         } else {
+    //             console.log('Please list some usage information for your project!');
+    //             return false;
+    //         }
+    //     } 
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'contribution',
+    //     message: 'What are the contribution guidelines for your project?',
+    //     validate: (contributionInput) => {
+    //         if (contributionInput) {
+    //             return true;
+    //         } else {
+    //             console.log('Please list the contribution guidelines for your project!');
+    //             return false;
+    //         }
+    //     } 
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'tests',
+    //     message: 'Describe any test instructions for your project : ',
+    //     validate: (testsInput) => {
+    //         if (testsInput) {
+    //             return true;
+    //         } else {
+    //             console.log('Please list any test instructions for your project!');
+    //             return false;
+    //         }
+    //     } 
+    // },
+    // {
+    //     type: 'checkbox',
+    //     name: 'license',
+    //     message: 'Choose the license for your project ',
+    //     choices: ['placeholders'],
+    //     validate: (licenseInput) => {
+    //         if (licenseInput) {
+    //             return true;
+    //         } else {
+    //             console.log('Please choose a license!');
+    //             return false;
+    //         }
+    //     } 
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'questionsGitUser',
+    //     message: 'What is your GitHub Username?',
+    //     validate: (gitUserInput) => {
+    //         if (gitUserInput) {
+    //             return true;
+    //         } else {
+    //             console.log('You must list your GitHub username!');
+    //             return false;
+    //         }
+    //     } 
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'questionsEmail',
+    //     message: 'What is your email address?',
+    //     validate: (emailInput) => {
+    //         if (emailInput) {
+    //             return true;
+    //         } else {
+    //             console.log('You must list your email!');
+    //             return false;
+    //         }
+    //     } 
+    
 ]
 ;
 
-// TODO: Create a function to write README file
-// const writeFile = () => {
-//     return new Promise((resolve, reject) => {
-//         fs.writeFile('./dist/README.md', readmeData,  err => {
-//             if (err) {
-//                 reject(err);
-//                 return;
-//             }
+const readmeAnswers = [];
 
-//             resolve({
-//                 ok: true,
-//                 message: 'README file created!'
-//             })
-//         })
-//     }) 
-// }
+// TODO: Create a function to write README file
+const writeFile = () => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./dist/README.md', generateMarkdown(readmeAnswers), err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'README file created!'
+            })
+        })
+    }) 
+}
 
 // TODO: Create a function to initialize app
 function init() {
     return inquirer
     .prompt(questions)
     .then(readmeData => {
-
+        // console.log(readmeData)
+        readmeAnswers.push(readmeData);
+        // console.log(readmeAnswers);
     })
 }
 
 // Function call to initialize app
 init()
-    // .then(writeFileResponse => {
-    //     console.log(writeFileResponse);
-    //     return writeFile();
-    // });
+    .then(writeFileResponse => {
+        // console.log(writeFileResponse);
+        return writeFile();
+    });
