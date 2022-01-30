@@ -20,12 +20,12 @@ ${readmeData.description}
 
 ## Table of Contents: 
 
-- [Installation](#Installation-Instructions)
-- [Usage](#Usage)
-- [Contributing](#Contribution-Guidelines)
-- [Tests](#Test-Instructions)
-- [License](#License-Information)
-- [Questions](#Questions)
+- [Installation](#installation-instructions)
+- [Usage](#usage)
+- [Contributing](#contribution-guidelines)
+- [Tests](#test-instructions)
+- [License](#license-information)
+- [Questions](#questions)
 
 ### Installation Instructions
 
