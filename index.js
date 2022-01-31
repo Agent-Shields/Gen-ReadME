@@ -89,15 +89,7 @@ const questions =
         type: 'checkbox',
         name: 'license',
         message: 'Choose the license for your project ',
-        choices: ['placeholders'],
-        validate: (licenseInput) => {
-            if (licenseInput) {
-                return true;
-            } else {
-                console.log('Please choose a license!');
-                return false;
-            }
-        } 
+        choices: ['None', 'MIT', 'Eclipse', 'ISC', 'Mozilla', 'Perl'],    
     },
     {
         type: 'input',
@@ -142,9 +134,9 @@ const writeFile = () => {
             resolve({
                 ok: true,
                 message: 'README file created!'
-            })
-        })
-    }) 
+            });
+        });
+    }) ;
 }
 
 // TODO: Create a function to initialize app
@@ -152,9 +144,7 @@ function init() {
     return inquirer
     .prompt(questions)
     .then(readmeData => {
-        console.log(readmeData)
         readmeAnswers = readmeData;
-        console.log(readmeAnswers);
     })
 }
 
