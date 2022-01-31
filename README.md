@@ -1,7 +1,5 @@
 # Professional README Generator Starter Code
 
-[How to create a Professional README](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
-
 ## Purpose
 Deploy a Command Line Interface (CLI) application that runs with node and inquirer which will take user input and dynamically generate a README.md file.
 
@@ -16,9 +14,8 @@ https://agent-shields.github.io/Gen-ReadME/
 ## Repository
 https://github.com/Agent-Shields/Gen-ReadME
 
-## Screenshot
-Here will be an image of what this application should look like when finished
-<!-- ![image](assets/images/WeatherTrackerProof.PNG) -->
+## Walkthrough Video link
+https://watch.screencastify.com/v/InZsj77lcneQj1saUlll
 
 ## Definition of Done
 
@@ -44,8 +41,6 @@ THEN this is added to the section of the README entitled Questions, with instruc
 
 WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
-
-## Walkthrough Video Link
 
 ## Contribution
 Made with ❤️ by Johnathan Shields 
