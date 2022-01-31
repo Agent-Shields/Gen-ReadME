@@ -49,7 +49,7 @@ const questions =
     {
         type: 'input',
         name: 'usage',
-        message: 'Enter the usage information for your project',
+        message: 'Enter the usage information for your project : ',
         validate: (usageInfoInput) => {
             if (usageInfoInput) {
                 return true;
@@ -88,8 +88,9 @@ const questions =
     {
         type: 'checkbox',
         name: 'license',
-        message: 'Choose the license for your project ',
-        choices: ['None', 'MIT', 'Eclipse', 'ISC', 'Mozilla', 'Perl'],    
+        message: 'Choose the license for your project : ',
+        choices: ['None', 'MIT', 'ISC', 'Mozilla', 'Perl'],
+        default: ['None']
     },
     {
         type: 'input',
