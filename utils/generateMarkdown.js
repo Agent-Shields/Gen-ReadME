@@ -1,5 +1,5 @@
 // store license badges
-const mitBadge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`;
+const mitBadge = '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)';
 const eclipseBadge = '![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)';
 const iscBadge = '![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)';
 const mozillaBadge = '![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)' ;
@@ -64,13 +64,14 @@ function renderLicenseSection(license) {
 function generateMarkdown(readmeData) {
   console.log(readmeData.license)
   console.log(typeof(readmeData.license))
+  console.log(readmeData)
   return `# ${readmeData.title}
 
 ## Description :
 
 ${readmeData.description} 
 
-# ${renderLicenseBadge(JSON.stringify(readmeData.license))}
+# ${renderLicenseBadge(readmeData.license[0])}
 
 ## Table of Contents: 
 
@@ -99,9 +100,9 @@ ${readmeData.tests}
 
 ### License Information
 
-${renderLicenseSection(JSON.stringify(readmeData.license))}
+${renderLicenseSection(readmeData.license[0])}
 
-Here is a link to this license : ${renderLicenseLink(JSON.stringify(readmeData.license))}
+Here is a link to this license : ${renderLicenseLink(readmeData.license[0])}
 
 ## Questions : 
 
